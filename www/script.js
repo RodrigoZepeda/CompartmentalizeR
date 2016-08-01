@@ -929,13 +929,13 @@ $(document).ready(function(){
     //Default JSplub arrows
     jsPlumb.Defaults.Overlays = [[ "Arrow", { width:10, length:10, location:1}]];
     jsPlumb.Defaults.EndpointStyle = { fillStyle:"red", outlineWidth:1, radius: 5};
-    jsPlumb.Defaults.Endpoints = [["Dot", { radius:5, isSource: true, isTarget: true}]];  
+    jsPlumb.Defaults.Endpoints = [["Dot", { radius:7.5, isSource: true, isTarget: true}]];  
     jsPlumb.Defaults.MaxConnections = -1;
     jsPlumb.Defaults.EndpointHoverStyle = { fillStyle:"purple" };
     jsPlumb.Defaults.Anchors = ["Left", "Top", "Right", "Bottom"];
     jsPlumb.Defaults.PaintStyle = { strokeStyle:"#848484", lineWidth:1 };
     jsPlumb.Defaults.HoverPaintStyle = { lineWidth:3, strokeStyle:"blue" } ;
-    jsPlumb.Defaults.ConnectionsDetachable = false;
+    //jsPlumb.Defaults.ConnectionsDetachable = false;
       
     //Click on simulation button
     document.getElementById("simButton").onclick = function() {

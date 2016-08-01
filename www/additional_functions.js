@@ -822,7 +822,8 @@ function loadConnectors(model, ModelLoaded){
       source: src,
       target: tgt,
       anchors: connectid.anchors,
-      uuids: [ "endpt" + src,  "endpt" + tgt]
+      uuids: [ "endpt" + src,  "endpt" + tgt],
+      maxConnections: -1,
     });
     
     
