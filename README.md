@@ -4,11 +4,7 @@ CompartmentalizeR
 R app (developed in Shiny) for the interactive creation of compartmental models (such as the ones in chemical-kinetics, molecular biology, epidemiology, environmental sciences and more). **Easy drag-and-click interface. No code nor equations required**.
 
 ![HIV model](readme-images/HIVModel.png)
-<p>
-<center style="font-size: small;">
-HIV model from REF
-</center>
-</p>
+
 User can create Ordinary Differential Equations, Discrete Time Markov Chains and Continuous Time Markov Chains only by establishing relationships between compartments:
 
 ![HIV model](readme-images/HowitWorks.png)
