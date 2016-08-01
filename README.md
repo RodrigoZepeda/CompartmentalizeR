@@ -8,15 +8,13 @@ R app (developed in Shiny) for the interactive creation of compartmental models 
 User can create Ordinary Differential Equations, Discrete Time Markov Chains and Continuous Time Markov Chains only by establishing relationships between compartments:
 
 ![HIV model](readme-images/HowitWorks.png)
-<p>
-<center style="font-size: small;">
+
 Yes: it's that easy!
-</center>
-</p>
+
 <h2>
 Index
 </h2>
-1.  [Intallation](##Installation)
+1.  [Installation](##Installation)
 
     -   [I am an R newbie](#newbie)
 
@@ -66,33 +64,23 @@ I am an R newbie
 </h3>
 For using this program you need to download [R from its site](https://www.r-project.org/). Follow their instructions. Once R has been installed it will look like this (it varies from platform to platform):
 
-<center>
 <img src="readme-images/HowRlooks.png" alt="How R looks" width = "300px"/>
-</center>
 
 Before using the programme you need to install an additional package called `shiny`. Type into the R console `install.packages("shiny")`. You might need to select a CRAN mirror: choose whichever you like.
 
-<center>
 <img src="readme-images/InstallShiny.png" alt="Installing shiny" width = "300px"/>
-</center>
 
 After installing type the following code to start using **CompartmentalizeR**: `shiny::runGitHub("RodrigoZepeda/CompartmentalizeR")`
 
-<center>
 <img src="readme-images/RunCompartmentalizeR.png" alt="Run CompartmentalizeR" width = "300px"/>
-</center>
 
 A window with the software will deploy. Don't use it just yet: check the R window as it might be installing everything you need. You might need to select a CRAN mirror: choose whichever you like.
 
-<center>
 <img src="readme-images/Installing.png" alt="Installing CompartmentalizeR" width = "300px"/>
-</center>
 
 A message will tell you when you can use the software.
 
-<center>
 <img src="readme-images/Youcanuseit.png" alt="You can use it" width = "300px"/>
-</center>
 
 If you ever want to use the program again you'll just need to type `shiny::runGitHub("RodrigoZepeda/CompartmentalizeR")` in the R console. No more installation will be required.
 
