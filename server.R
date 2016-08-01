@@ -713,25 +713,25 @@ for (fun in rfunctions){
 clibraries     <- c('deSolve','shiny','ggplot2','reshape',
                     'markovchain','GillespieSSA')
 booleaninstall <- FALSE
-# for (lib in clibraries){
-#   if ( !(lib %in% rownames(installed.packages())) ){
-#     cat("Installing packages...\n")
-#     install.packages(lib)
-#     booleaninstall <- TRUE
-#   }
-#   suppressMessages(require(lib, character.only = TRUE))
-# }
+for (lib in clibraries){
+  if ( !(lib %in% rownames(installed.packages())) ){
+    cat("Installing packages...\n")
+    install.packages(lib)
+    booleaninstall <- TRUE
+  }
+  suppressMessages(require(lib, character.only = TRUE))
+}
 
 
 cat("\nEverything loaded!! You can use the CompartmentalizeR now")
 
 #Uncomment this when uploading to shiny server
-library(deSolve)
-library(shiny)
-library(ggplot2)
-library(reshape)
-library(markovchain)
-library(GillespieSSA)
+#library(deSolve)
+#library(shiny)
+#library(ggplot2)
+#library(reshape)
+#library(markovchain)
+#library(GillespieSSA)
 
 
 shinyServer(function(input, output, session) {
