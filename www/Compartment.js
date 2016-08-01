@@ -848,7 +848,7 @@ Compartment.prototype.nodecreate_JSPlumb = function()
               anchor: this.sides[i],
               connectorOverlays:[ 
                 [ "Arrow", { width:10, length:10, location:1}]]
-    }, this.endpointchars).addClass(this.classvar);
+    }, this.endpointchars,{uuid: "endpt" + this.id}).addClass(this.classvar);
    }
 
 };

@@ -821,7 +821,8 @@ function loadConnectors(model, ModelLoaded){
     jsPlumb.connect({
       source: src,
       target: tgt,
-      anchors: connectid.anchors
+      anchors: connectid.anchors,
+      uuids: [ "endpt" + src,  "endpt" + tgt]
     });
     
     
