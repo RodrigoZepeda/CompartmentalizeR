@@ -853,7 +853,7 @@ function loadConnectors(model, ModelLoaded){
    
     //Get the anchor
     anchorstringsrc = connectid.anchors[0].toString();
-    anchorstringtgt = connectid.anchors[0].toString();
+    anchorstringtgt = connectid.anchors[1].toString();
     
     //Get which anchor position is
     if (anchorstringsrc ==  [ 0.5, 0, 0, -1, 0, 0].toString()){anchorpossrc = "Top"}
@@ -866,13 +866,14 @@ function loadConnectors(model, ModelLoaded){
     if (anchorstringtgt ==  [ 0.5, 1,  0, 1, 0, 0].toString()){anchorpostgt = "Bottom"}
     if (anchorstringtgt ==  [ 0, 0.5, -1, 0, 0, 0].toString()){anchorpostgt = "Left"}
     
-   
+    console.log(anchorpossrc + "_" + src + "_" + anchorpostgt + "_" + tgt);
+    
     //Connect in JsPlimb
     jsPlumb.connect({
       source: src,
       target: tgt,
       anchors: connectid.anchors,
-      uuids: [ "endpt" + src + "_" + anchorpossrc,   "endpt" + tgt + "_" + anchorpostgt],
+      uuids: [ "endpt" + src + "_" + anchorpossrc, "endpt" + tgt + "_" + anchorpostgt],
       maxConnections: -1,
     });
     

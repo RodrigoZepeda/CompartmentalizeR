@@ -784,7 +784,7 @@ Compartment.prototype.create_endpoint_characteristics = function()
     this.endpointchars = {
         isSource:            true,
         isTarget:            true,
-        endpoint:            ["Dot", { radius:10 }],
+        endpoint:            ["Dot", { radius: 7 }],
         paintStyle:          { fillStyle:"red", outlineWidth:1 },
         /*maxConnections:       -1, 
         connector:           "Bezier",
