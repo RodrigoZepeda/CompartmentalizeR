@@ -701,7 +701,7 @@ function fixIds(elem, cntr) {
 //(last check July 2016).
 //---------------------------------
 //http://stackoverflow.com/questions/20620719/save-and-load-jsplumb-flowchart-including-exact-anchors-and-connections
-function saveModel(model){
+function savenodes(model){
     
         //Get node position, names, equation, id and number
         var nodes = [];
@@ -720,7 +720,12 @@ function saveModel(model){
                 cmpt_init:   $( '#' + currentnode.initvalsid).val()
             });
         }
-            
+        
+        return nodes;
+}
+
+function saveconnections(model){
+  
         //Get connections and connection type    
         var connections = [];
         var src, tgt, cid, connecttype, inputval, constnt; 
@@ -762,6 +767,11 @@ function saveModel(model){
                 });
         });
         
+        return connections;
+}
+
+function saveModel(nodes, connections, model) {       
+  
         //Construct the model
         var Model = {};
         Model.nodes       = nodes;
@@ -769,12 +779,35 @@ function saveModel(model){
         Model.simtype     = $("#solmethod input[type='radio']:checked").val();
         Model.varnum      = model.varnum;
         Model.numvars     = model.numvars;
+        
+        return Model;
+}
 
+function saveJson(Model){
+  
         //Save as JSON file
         var ModelJson = JSON.stringify(Model);
         console.log(ModelJson);
         return ModelJson;
 } 
+
+function save_order(model, savenodes, saveconnections, saveModel, saveJson)
+{
+  
+  var nodes       = savenodes(model);
+  var connections = saveconnections(model);
+  var Model       = saveModel(nodes, connections, model);
+  var ModelJson   = saveJson(Model);
+
+  return ModelJson;
+}
+
+function saveAll(model){
+  
+  var ModelJson   = save_order(model, savenodes, saveconnections, saveModel, saveJson);
+  return ModelJson;
+  
+}
 
 function loadSquares(uploaded){
   
@@ -822,7 +855,7 @@ function loadConnectors(model, ModelLoaded){
       source: src,
       target: tgt,
       anchors: connectid.anchors,
-      uuids: [ "endpt" + src,  "endpt" + tgt],
+      //uuids: [ "endpt" + src,  "endpt" + tgt],
       maxConnections: -1,
     });
     

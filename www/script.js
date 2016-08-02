@@ -747,8 +747,7 @@ $(document).ready(function(){
     //Function for saving the results (still in diapers)
     //(last check March 10 2016).
     $(document.body).on('click','#Save',function(){   
-        saved = saveModel(model);
-        console.log(saved);
+        saved = saveAll(model);
         Shiny.onInputChange("savedmodel", saved);
     });
     
@@ -769,8 +768,7 @@ $(document).ready(function(){
          if(where_click.length) {
              
              model.selectCompartment(where_click.attr('id'));
-             
-        
+
          }
     }); 
     
