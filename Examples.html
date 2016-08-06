@@ -7,11 +7,35 @@
     <meta name="description" content="Compartmentalizer : R-Shiny app for compartmental modeling (Markov Chains, Markov Processes and Ordinary Differential Equations)">
     <link rel="shortcut icon" href="images/favicon.ico" />
     <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/bootstrap.css">
+    <script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script>
     <script src="javascripts/jquery-2.2.1.js"></script>
     <script src="javascripts/jquery-ui.js"></script>
+    <link rel="stylesheet" type="text/css" href="./slick/slick.css">
+    <link rel="stylesheet" type="text/css" href="./slick/slick-theme.css">    
+    <script src="./slick/slick.js" type="text/javascript" charset="utf-8"></script>
     <script src="javascripts/main.js"></script>
-
-
+    <script type="text/javascript">
+    $(document).on('ready', function() {
+      $(".regular").slick({
+        dots: true,
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".center").slick({
+        dots: true,
+        infinite: true,
+        centerMode: true,
+        slidesToShow: 3,
+        slidesToScroll: 3
+      });
+      $(".variable").slick({
+        dots: true,
+        infinite: true,
+        variableWidth: true
+      });
+    });
+  </script>
     <title>Compartmentalizer</title>
   </head>
 
@@ -32,18 +56,123 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>Oops! Page coming soon</h3>
-      </section>  
+        <h2>Examples</h2>
+        <p> If you are interested in a <a href = "Start.html"> worked example click here </a>. These are examples of models programmed with <b>CompartmentalizeR</b> </p>
+        
+        <div style =" width: 100%; text-align: center;">
+         <section class="variable slider">
+            <div>
+                <div style = "width: 82%;">
+                    <h3> Lotka Volterra </h3>
+                </div>
+                <img src="images/LotkaVolterra.png" alt="How it works" border = "0">
+                <div style = "width: 82%; margin-left: 0%; text-align: justify;" class="inner">
+                    <h4> Description </h4>
+                    <p style = "margin-left: 0%;"> In this model we consider two populations: <code>Predators</code> and <code>Preys</code>. It is assumed that the number of born <code>Preys</code> depends only upon the number of <code>Preys</code>; the number of <code>Predators</code> depends on the number of <code>Preys</code> and <code>Predators</code> and that <code>Predators</code> can exit the model by dying in a linear fashion.</p>
+                    
+                    <h4> Equations </h4>
+                    <div class="r">
+                    $$
+                    \begin{aligned}
+                     \dfrac{dx_1}{dt} & = \omega_{1 \to 1} x_1 - \omega_{1 \to 2} x_2, & (\textrm{Preys})\\ \\
+                     \dfrac{dx_2}{dt} & = \omega_{1 \to 2} x_2 - \omega_{2 \to 2} x_2  & (\textrm{Predators})
+                    \end{aligned}
+                    $$
+                    </div>
+                    
+                    <h4>Plot</h4>
+                    <img src ="images/LVModeled.png" alt ="Lotka Volterra Plot" style ="width: 100%; border: solid black;" />
+                    
+                    <h4> Files </h4>
+                    <ul>
+                        <a href = "https://raw.githubusercontent.com/RodrigoZepeda/CompartmentalizeR/master/examples/Lotka-Volterra_Model.txt" ><li> Lotka Volterra as Ordinary Differential Equation </li></a>
+                    </ul>
+                    
+                </div>
+            </div>
+            <div>
+                <div style = "width: 82%;">
+                    <h3> Radioactive Decay </h3>
+                    </div>
+                    <img src="images/Radioactive.png" alt="How it works" border = "0">
+                    <div style = "width: 82%; margin-left: 0%; text-align: justify;" class="inner">
+                        <h4> Description </h4>
+                        <p style = "margin-left: 0%;"> In this model we consider a substance with \(x_1\) initial <code>Particles in substance</code> which decay at a constant rate \(\omega_{1 \to 1}\) by "exiting" the substance and becoming <code>Decayed particles</code>.</p>
+
+                        <h4> Equations </h4>
+                        The classic model is given by: 
+                        <div class="r">
+                        $$
+                        \begin{aligned}
+                         \dfrac{dx_1}{dt}  & =  -\omega_{1 \to 1} x_1 & (\textrm{Particles in substance})
+                        \end{aligned}
+                        $$
+                        </div>
+                        which can be rewritten as:
+                        <div class="r">
+                        $$
+                        \begin{aligned}
+                         \dfrac{dx_1}{dt} & = -\omega_{1 \to 2} x_1 & (\textrm{Particles in substance})\\ \\
+                         \dfrac{dx_2}{dt} & = \omega_{1 \to 2} x_1  & (\textrm{Decayed particles})
+                        \end{aligned}
+                        $$
+                        </div>
+
+                        <h4>Plot</h4>
+                        <img src ="images/RadioactiveDecay.png" alt ="SIR Model Plot" style ="width: 100%; border: solid black;" />
+
+                        <h4> Files </h4>
+                        <ul>
+                            <a href = "https://raw.githubusercontent.com/RodrigoZepeda/CompartmentalizeR/master/examples/Radioactive_decay.txt" ><li> Radioactive Decay as Continuous-Time Markov Chain </li></a>
+                        </ul>
+
+                    </div>
+            </div>
+            <div>
+                <div style = "width: 82%;">
+                    <h3> Susceptible Infected Recovered (SIR) </h3>
+                    </div>
+                    <img src="images/SIR.png" alt="How it works" border = "0">
+                    <div style = "width: 82%; margin-left: 0%; text-align: justify;" class="inner">
+                        <h4> Description </h4>
+                        <p style = "margin-left: 0%;"> In this model we assume a population with three different type of individuals: those <code>Susceptible</code> to a disease, those <code>Infected</code> by a disease which can infect other <code>Susceptible</code> by interacting with them and those <code>Recovered</code> which are <code>Infected</code> people who have recovered at a constant rate.</p>
+
+                        <h4> Equations </h4>
+                        
+                        <div class="r">
+                        $$
+                        \begin{aligned}
+                         \dfrac{dx_1}{dt} &= -\omega_{1 \to 2} x_1 x_2 & (\textrm{Susceptible}) \\ \\
+                         \dfrac{dx_2}{dt} &= \omega_{1 \to 2} x_1 x_2  - \omega_{2 \to 3}x_2 & (\textrm{Infected}) \\ \\
+                         \dfrac{dx_3}{dt} &= \omega_{2 \to 3} x_2   & (\textrm{Recovered})
+                        \end{aligned}
+                        $$
+                        </div>
+
+                        <h4>Plot</h4>
+                        <img src ="images/SIRModel.png" alt ="Radioactive Decay Plot" style ="width: 100%; border: solid black;" />
+
+                        <h4> Files </h4>
+                        <ul>
+                            <a href = "https://raw.githubusercontent.com/RodrigoZepeda/CompartmentalizeR/master/examples/SIR_Model.txt" ><li> SIR model as Ordinary Differential Equation </li></a>
+                        </ul>
+
+                    </div>
+            </div>            
+         </section> 
+        </div>
+        <div style = "height: 55px; width: 100%;"> </div>
     </div>
     
     <!-- Bottom navbar-->
+    <!-- Bottom navbar-->
     <ul  class="podbar" style = "margin-top: 40%; margin-bottom: 0%; text-align: center; position: fixed ;  background-color: #212121; width: 100%; height: 50px">
-            <li class = "About">About</li>
-            <li class = "Install">Install</li>
-            <li class = "Start">Start</li>
-            <li class = "Examples">Examples</li>
-            <li class = "Videos">Videos</li>
-            <li class = "Theory">Theory</li>
+        <li class = "About">About</li>
+        <li class = "Install">Install</li>
+        <li class = "Start">Start</li>
+        <li class = "Examples">Examples</li>
+        <!--<li class = "Videos">Videos</li>
+        <li class = "Theory">Theory</li>-->
     </ul>
 
   </body>

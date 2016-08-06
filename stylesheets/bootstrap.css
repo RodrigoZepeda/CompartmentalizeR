@@ -50,10 +50,15 @@ button.code-folding-btn:focus {
   height: 75%;
 }
 
+
 .slick-prev:before,
 .slick-next:before {
     background-color: black;
     border-radius: 50%;
+}
+
+#options > li{
+    margin: 15px 0;
 }
 
 /*******************************************************************************
