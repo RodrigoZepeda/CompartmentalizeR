@@ -13,6 +13,24 @@
  */
 /*! normalize.css v3.0.3 | MIT License | github.com/necolas/normalize.css */
 
+.main-container {
+  max-width: 940px;
+  margin-left: auto;
+  margin-right: auto;
+}
+code {
+  color: inherit;
+  background-color: rgba(0, 0, 0, 0.04);
+}
+
+.r {
+    color: #222;
+}
+
+button.code-folding-btn:focus {
+  outline: none;
+}
+
 * {
   box-sizing: border-box;
 }
@@ -34,7 +52,8 @@
 
 .slick-prev:before,
 .slick-next:before {
-    color: black;
+    background-color: black;
+    border-radius: 50%;
 }
 
 /*******************************************************************************

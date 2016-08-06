@@ -32,8 +32,36 @@
     <!-- MAIN CONTENT -->
     <div id="main_content_wrap" class="outer">
       <section id="main_content" class="inner">
-        <h3>Oops! Page coming soon</h3>
+        <h2>
+        Installation
+        </h2>
+        <p>For installing the program there are two options: either you are an <a href="#newbie">R newbie</a> or you already <a href="#IamanRGuru">know your way around</a>. Choose the option that best suits you.</p>
+        <a name="IamanRGuru"></a>
+        <h3>
+        I am an R Guru
+        </h3>
+        <p>You need to install the following libraries: <code>deSolve</code>, <code>shiny</code>, <code>ggplot2</code>, <code>reshape</code>, <code>markovchain</code>, and <code>GillespieSSA</code>. For deploying the App you can download it and run it with <code>shiny::runApp</code> or run it from Github:</p>
+        <pre class="r"><code>shiny::runGitHub(&quot;RodrigoZepeda/CompartmentalizeR&quot;)</code></pre>
+        <a name="newbie"></a>
+        <h3>
+        I am an R newbie
+        </h3>
+        <p>For using this program you need to download <a href="https://www.r-project.org/">R from its site</a>. Follow their instructions. Once R has been installed it will look like this (it varies from platform to platform):</p>
+        <img src="images/HowRlooks.png" alt="How R looks" style ="width: 50%; margin-left: 25%;" />
+        <p>Before using the programme you need to install an additional package called <code>shiny</code>. Type into the R console <code>install.packages(&quot;shiny&quot;)</code> and press the key <code>Enter</code>. You might need to select a CRAN mirror: choose whichever you like.</p>
+        <img src="images/InstallShiny.png" alt="Installing shiny" style ="width: 50%; margin-left: 25%;" />
+        <p>After installing type the following code to start using <strong>CompartmentalizeR</strong>: <code>shiny::runGitHub(&quot;RodrigoZepeda/CompartmentalizeR&quot;)</code></p>
+        <img src="images/RunCompartmentalizeR.png" alt="Run CompartmentalizeR" style ="width: 50%; margin-left: 25%;" />
+        <p>A window with the software will deploy. Don’t use it just yet: check the R window as it might be installing everything you need. You might need to select a CRAN mirror: choose whichever you like.</p>
+        <img src="images/Installing.png" alt="Installing CompartmentalizeR" style ="width: 50%; margin-left: 25%;" />
+        <p>A message will tell you when you can use the software.</p>
+        <img src="images/Youcanuseit.png" alt="You can use it" style ="width: 50%; margin-left: 25%;" />
+        <p>If you ever want to use the program again you’ll just need to type in the R console the following code: </p>
+        <pre class = "r"><code>shiny::runGitHub(&quot;RodrigoZepeda/CompartmentalizeR&quot;)</code></pre> 
+        <p> No more installation will be required.</p>
+        <p><strong>REMEMBER: By installing this way, the program will only work with an Internet Connection</strong></p>
       </section>  
+      <div style = "height: 55px; width: 100%;"> </div>
     </div>
     
     <!-- Bottom navbar-->
